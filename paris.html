@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <title>CLOCK</title>
+    <div id="hello"></div>
+   
+  </head>
+
+
+
+  <body>
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-cyan">
+        <div class="container-fluid" style="background-color: rgb(99, 214, 214);margin:10px; border-radius:10px ;font-style:italic ;">
+          <a class="navbar-brand" href="#">WORLD CLOCK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a   class="btn btn-outline-dark" aria-current="page" href="index.html"><b>Home</b></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="btn btn-outline-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <b> List of Countries >></b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="paris.html">PARIS</a></li>
+                  <li><a class="dropdown-item" href="uae.html">UAE</a></li>
+                  <li><a class="dropdown-item" href="russia.html">RUSSIA</a></li>
+                  <li><a class="dropdown-item" href="japan.html">JAPAN</a></li>
+                  <li><a class="dropdown-item" href="italy.html">ITALY</a></li>
+                  <li><a class="dropdown-item" href="usa.html">USA</a></li>
+
+                
+                 
+                </ul>
+              </li>
+             
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit"><b>Search</b></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+   
+
+  <div style="margin:10px">
+     <center> <h2>"The key is in not spending time, but in investing it."</h2>
+    <br>
+<h3>Welcome to PARIS</h3>
+</center>
+     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  
+    <div class="card" style="width: 30rem;background: rgb(99, 214, 214);margin-top: 60px; margin-left:534px; padding:60px; padding-left: 110px; border-radius: 10px; border-width: 3px ; border-color: black; ">
+     
+        <div class="card-body">
+          <h4 class="card-title">Date is : <span id="date"></span></h4>
+          <p class="card-text"> <h4>Time is : <span id="time"></span><h4></p>
+         
+        </div>
+      </div>
+      
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script >
+            
+            setInterval(() => {
+                
+               
+
+// create Date object for current location
+d = new Date();
+
+// convert to msec
+// add local time zone offset 
+// get UTC time in msec
+utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+// create new Date object for different city
+// using supplied offset
+nd = new Date(utc + (3600000*1));
+
+// return time as a string
+document.getElementById('time').innerHTML = " " + nd.getHours() + " : " + nd.getMinutes() + " : " + nd.getSeconds();
+document.getElementById('date').innerHTML =  nd.toLocaleDateString();
+
+            
+             
+            }, 1000);
+          </script>
+
+  </body>
+</html>
